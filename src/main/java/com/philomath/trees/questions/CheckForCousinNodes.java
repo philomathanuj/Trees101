@@ -1,5 +1,15 @@
 package com.philomath.trees.questions;
 
+/**
+ * 1: If node A == B return false as a node cannot be cousin of itself.
+ * 2: Check nodes A and B are not siblings and
+ * 3: Check nodes A and B are on same level.
+ *
+ * How to find if 2 nodes are siblings:
+ * 1. If A and B are left and right children of the root, then they are siblings.
+ * 2. Else check Step 1 in left and right subtrees.
+ * 3. If the condition in Step 1 is not true for any node, then the nodes are not siblings.
+ */
 public class CheckForCousinNodes {
     TreeNode root;
 
