@@ -67,11 +67,15 @@ public class CheckIfBSTHasOnlyOneInternalNode {
         int minSoFar = preOrder.get(preOrder.size()-1);
         int maxSoFar = preOrder.get(preOrder.size()-1);
         for(int i = preOrder.size()-2; i >=0; i--){
-            if(!(preOrder.get(i) < minSoFar || preOrder.get(i) > maxSoFar)){
+            if(preOrder.get(i) < minSoFar){
+                minSoFar = preOrder.get(i);
+            }
+            else if(preOrder.get(i) > maxSoFar){
+                maxSoFar = preOrder.get(i);
+            }
+            else{
                 return false;
             }
-            minSoFar = Math.min(preOrder.get(i), minSoFar);
-            maxSoFar = Math.max(preOrder.get(i), maxSoFar);
         }
         return true;
     }
